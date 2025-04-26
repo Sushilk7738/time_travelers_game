@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Era }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="{{ era|replace('  ', '') }}">
+    <h2>You are now in: {{ era }} </h2>
+    <p>Choose your path: </p>
+    <form action="/play" method="post">
+        <button name="choice" value="left">Go Left</button>
+        <button name="choice" value="right">Go Right</button>
+    </form>
+</body>
+</html>
