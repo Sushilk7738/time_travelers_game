@@ -1,27 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 40px;
-    background: #222;
-    color: #eee;
+:root {
+    --bg: #111;
+    --text:#eee;
+    --btn-bg: #4CAF50;
+    --btn-hover: #45a049;
 }
 
-h2 {
-    margin-bottom: 20px;
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;    
 }
+
 
 button {
-    margin: 0 10px;
-    padding: 10px 20px;
+    background-color: var(--btn-bg);
+    color:white;
+    padding: 12px 24px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 16px;
     cursor: pointer;
-    background: #28a745;
-    color: #fff;
-    font-size: 1rem;
-
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: var(--btn-hover);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Era specific Themes */
+
+body.AncientEra {
+    --bg: #f8efd4;
+    --text: #5d4037;
+    --btn-bg: #d7a74e;
+    --btn-hover:#b8860b;
+}
+
+body.MedievalEra {
+    --bg: #1a1a1a;
+    --text: #d4d4d4;
+    --btn-bg: #7e57c2;
+    --btn-hover: #5e35b1;
+}
+
+body.FutureEra {
+    --bg: #0d1b2a;
+    --text: #00d1ff;
+    --btn-bg: #1de9b6;
+    --btn-hover: #00bfa5;
+}
+
+body.HomePage {
+    --bg: #001f3f;
+    --text: #ffffff;
+    --btn-bg: #0074D9;
+    --btn-hover: #005fa3;
+}
+
+body.VictoryPage {
+    --bg: #fff8dc; 
+    --text: #ff8c00; 
+    --btn-bg: #ffd700;
+    --btn-hover: #ffb300;
+}
+
+body.GameOverPage {
+    --bg: #2b0000; 
+    --text: #ff4c4c; 
+    --btn-bg: #990000; 
+    --btn-hover: #660000; 
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+body.Ancient-Egypt {
+    background-image: url();
 }

@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ Era }}</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>Time Travelers - {{ era }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body class="{{ era|replace('  ', '') }}">
-    <h2>You are now in: {{ era }} </h2>
-    <p>Choose your path: </p>
-    <form action="/play" method="post">
-        <button name="choice" value="left">Go Left</button>
-        <button name="choice" value="right">Go Right</button>
+<body class="{{ era|replace(' ', '') }} fade-in">
+    <h1 id="storyText"></h1>
+
+    <form method="post" action="play">
+        <button type="submit" name="choice" value="left">Go Left</button>
+        <button type="submit" name="choice" value="right">Go Right</button>
     </form>
+    <script>
+        const story = "🌟 Welcome to the {{ era }}! Choose your path carefully... 🚪";
+        let i = 0;
+        let speed = 70;
+
+
+        function typeWriter() {
+            if (i < story.length){
+                document.getElementById("storyText").innerHTML += story.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
 </body>
 </html>

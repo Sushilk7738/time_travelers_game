@@ -41,7 +41,20 @@ def play():
     current_era = eras[session['step']]
     return render_template('era.html', era = current_era)    
 
+@app.route('/victory')
+def victor():
+    return render_template('victory.html')
+
+
+
+@app.route('/gameover')
+def gameover():
+    return render_template('gameover.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
     
     # return "🌟 The adventure begins!"
+    
+    

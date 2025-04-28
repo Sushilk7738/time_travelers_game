@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css') }}">
+</head>
+<body class="GameOverPage">
+    
+    <h1>☠️ Time Anomaly Detected!</h1>
+    <p>Oh no! You made the wrong choice and created a time paradox.</p>
+    <a href="{{ url_for('home') }}"><button>Try again</button></a>
+
+</body>
+</html>
